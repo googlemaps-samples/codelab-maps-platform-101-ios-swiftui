@@ -20,39 +20,15 @@ import SwiftUI
 /// button where the user
 struct ContentView: View {
 
-  /// State for markers displayed on the map when the use taps at a location. This property gets
-  /// reset whenever a new polygon is added to the map.
-  @State var polygonPath: [GMSMarker] = []
-
-  /// State for polygons displayed on the map
-  @State var polygons: [GMSPolygon] = []
-
   var body: some View {
-    VStack {
-      MapView(polygonPath: $polygonPath, polygons: $polygons)
-      Button(action: {
-        addNewPolygonIfNeeded()
-      }) {
-        Text("Create New Polygon")
-      }.padding(.top).disabled(polygonPath.count < 3)
-    }
-  }
-
-  private func addNewPolygonIfNeeded() {
-    guard !polygonPath.isEmpty else {
-      print("Cannot add new polygon. polygonPath is empty")
-      return
-    }
-
-    // Create a new polygon from `polygonPath` and remove all
-    // from the map.
-    let newPolygon = GMSMutablePath()
-    polygonPath.forEach { marker in
-      marker.map = nil
-      newPolygon.add(marker.position)
-    }
-    polygons.append(GMSPolygon(path: newPolygon))
-    polygonPath.removeAll()
+    MapCardView()
+//    ScrollView {
+//        VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20, content: {
+//          ForEach(0..<5) { _ in
+//            MapCardView()
+//        }
+//      })
+//    }
   }
 }
 
