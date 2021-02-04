@@ -32,7 +32,7 @@ struct MapView: UIViewRepresentable {
     let sanFrancisco = CLLocationCoordinate2D(latitude: 37.7576, longitude: -122.4194)
     gmsMapView.camera = GMSCameraPosition.camera(withTarget: sanFrancisco, zoom: defaultZoomLevel)
     gmsMapView.delegate = context.coordinator
-    gmsMapView.isUserInteractionEnabled = false
+    gmsMapView.isUserInteractionEnabled = true
     return gmsMapView
   }
 
@@ -53,6 +53,7 @@ struct MapView: UIViewRepresentable {
   func makeCoordinator() -> MapViewCoordinator {
     return MapViewCoordinator(self)
   }
+  
 
   final class MapViewCoordinator: NSObject, GMSMapViewDelegate {
     var mapView: MapView
