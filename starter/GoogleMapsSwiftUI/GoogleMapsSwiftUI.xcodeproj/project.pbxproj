@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA47547925CE0F9D0048065D /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA47547825CE0F9D0048065D /* City.swift */; };
+		AA47547C25CE0FBE0048065D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA47547B25CE0FBE0048065D /* MapViewController.swift */; };
 		AA4DEA89253A5A52004469E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4DEA88253A5A52004469E1 /* AppDelegate.swift */; };
 		AA4DEA8B253A5A52004469E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4DEA8A253A5A52004469E1 /* SceneDelegate.swift */; };
 		AA4DEA8D253A5A52004469E1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4DEA8C253A5A52004469E1 /* ContentView.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA47547825CE0F9D0048065D /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		AA47547B25CE0FBE0048065D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		AA4DEA85253A5A52004469E1 /* GoogleMapsSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleMapsSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA4DEA88253A5A52004469E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA4DEA8A253A5A52004469E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +152,8 @@
 				AA4DEA8E253A5A52004469E1 /* Assets.xcassets */,
 				AA4DEA93253A5A52004469E1 /* LaunchScreen.storyboard */,
 				AA4DEA90253A5A52004469E1 /* Preview Content */,
+				AA47547825CE0F9D0048065D /* City.swift */,
+				AA47547B25CE0FBE0048065D /* MapViewController.swift */,
 			);
 			path = GoogleMapsSwiftUI;
 			sourceTree = "<group>";
@@ -233,6 +239,8 @@
 			files = (
 				AA4DEA89253A5A52004469E1 /* AppDelegate.swift in Sources */,
 				AA4DEA8B253A5A52004469E1 /* SceneDelegate.swift in Sources */,
+				AA47547925CE0F9D0048065D /* City.swift in Sources */,
+				AA47547C25CE0FBE0048065D /* MapViewController.swift in Sources */,
 				AA4DEA8D253A5A52004469E1 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
