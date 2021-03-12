@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AA139D3525CB58F500793F6E /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA139D3425CB58F500793F6E /* City.swift */; };
 		AA139D4725CCAA0200793F6E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA139D4625CCAA0200793F6E /* MapViewController.swift */; };
+		AA4754A425CE295E0048065D /* MapViewControllerBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4754A325CE295E0048065D /* MapViewControllerBridge.swift */; };
 		AA4DEA89253A5A52004469E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4DEA88253A5A52004469E1 /* AppDelegate.swift */; };
 		AA4DEA8B253A5A52004469E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4DEA8A253A5A52004469E1 /* SceneDelegate.swift */; };
 		AA4DEA8D253A5A52004469E1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4DEA8C253A5A52004469E1 /* ContentView.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		AA139D3425CB58F500793F6E /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		AA139D4625CCAA0200793F6E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		AA4754A325CE295E0048065D /* MapViewControllerBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerBridge.swift; sourceTree = "<group>"; };
 		AA4DEA85253A5A52004469E1 /* GoogleMapsSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleMapsSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA4DEA88253A5A52004469E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA4DEA8A253A5A52004469E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				AA4DEA8C253A5A52004469E1 /* ContentView.swift */,
 				AA4DEAA8253A5BEF004469E1 /* MapView.swift */,
 				AA139D4625CCAA0200793F6E /* MapViewController.swift */,
+				AA4754A325CE295E0048065D /* MapViewControllerBridge.swift */,
 				AA4DEA8A253A5A52004469E1 /* SceneDelegate.swift */,
 				AA4DEA8E253A5A52004469E1 /* Assets.xcassets */,
 				AA4DEA93253A5A52004469E1 /* LaunchScreen.storyboard */,
@@ -243,6 +246,7 @@
 				AA4DEA89253A5A52004469E1 /* AppDelegate.swift in Sources */,
 				AA4DEAA9253A5BEF004469E1 /* MapView.swift in Sources */,
 				AA139D3525CB58F500793F6E /* City.swift in Sources */,
+				AA4754A425CE295E0048065D /* MapViewControllerBridge.swift in Sources */,
 				AA4DEA8B253A5A52004469E1 /* SceneDelegate.swift in Sources */,
 				AA4DEA8D253A5A52004469E1 /* ContentView.swift in Sources */,
 				AA139D4725CCAA0200793F6E /* MapViewController.swift in Sources */,

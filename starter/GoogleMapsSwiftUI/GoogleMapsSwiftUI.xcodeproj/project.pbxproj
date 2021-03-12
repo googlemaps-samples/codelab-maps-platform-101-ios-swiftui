@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AA47547925CE0F9D0048065D /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA47547825CE0F9D0048065D /* City.swift */; };
 		AA47547C25CE0FBE0048065D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA47547B25CE0FBE0048065D /* MapViewController.swift */; };
+		AA4754A725CE299C0048065D /* MapViewControllerBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4754A625CE299C0048065D /* MapViewControllerBridge.swift */; };
 		AA4DEA89253A5A52004469E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4DEA88253A5A52004469E1 /* AppDelegate.swift */; };
 		AA4DEA8B253A5A52004469E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4DEA8A253A5A52004469E1 /* SceneDelegate.swift */; };
 		AA4DEA8D253A5A52004469E1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4DEA8C253A5A52004469E1 /* ContentView.swift */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		AA47547825CE0F9D0048065D /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		AA47547B25CE0FBE0048065D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		AA4754A625CE299C0048065D /* MapViewControllerBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerBridge.swift; sourceTree = "<group>"; };
 		AA4DEA85253A5A52004469E1 /* GoogleMapsSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleMapsSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA4DEA88253A5A52004469E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA4DEA8A253A5A52004469E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 		AA4DEA87253A5A52004469E1 /* GoogleMapsSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				AA4754A625CE299C0048065D /* MapViewControllerBridge.swift */,
 				AA5C416F25478475000B4DAB /* GoogleMaps.bundle */,
 				AA4DEA96253A5A52004469E1 /* Info.plist */,
 				AA4DEA88253A5A52004469E1 /* AppDelegate.swift */,
@@ -237,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA4754A725CE299C0048065D /* MapViewControllerBridge.swift in Sources */,
 				AA4DEA89253A5A52004469E1 /* AppDelegate.swift in Sources */,
 				AA4DEA8B253A5A52004469E1 /* SceneDelegate.swift in Sources */,
 				AA47547925CE0F9D0048065D /* City.swift in Sources */,

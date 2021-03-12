@@ -46,36 +46,20 @@ struct ContentView: View {
 
     GeometryReader { geometry in
       ZStack(alignment: .top) {
+        // Map
         MapContainerView(zoomInCenter: $zoomInCenter, markers: $markers, selectedMarker: $selectedMarker)
           .frame(width: geometry.size.width, height: geometry.size.height - scrollViewHeight + 40)
           .blur(radius: 0)
 
-        VStack(spacing: 0) {
-          HStack(alignment: .center) {
-            Rectangle()
-              .frame(width: 25, height: 4, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-              .cornerRadius(10)
-              .opacity(0.25)
-              .padding(.vertical, 8)
-          }
-          .frame(width: geometry.size.width, height: 20, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-          .onTapGesture {
-            self.expandList.toggle()
-          }
-          List {
-              ForEach(0..<self.markers.count) { id in
-                let marker = self.markers[id]
-                Button(action: {
-                  self.selectedMarker = marker
-                  self.zoomInCenter = false
-                  self.expandList = false
-                }) {
-                  Text(marker.title ?? "")
-                }
-              }
-          }.frame(maxWidth: .infinity)
-        }
-        .background(Color.white)
+        // Cities List
+        CitiesList(markers: $markers) { (marker) in
+          guard self.selectedMarker != marker else { return }
+          self.selectedMarker = marker
+          self.zoomInCenter = false
+          self.expandList = false
+        }  handleAction: {
+          self.expandList.toggle()
+        }.background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: 10))
         .offset(
           x: 0,
@@ -97,6 +81,45 @@ struct ContentView: View {
   }
 }
 
+struct CitiesList: View {
+
+  @Binding var markers: [GMSMarker]
+  var buttonAction: (GMSMarker) -> Void
+  var handleAction: () -> Void
+
+  var body: some View {
+    GeometryReader { geometry in
+      VStack(spacing: 0) {
+
+        // List Handle
+        HStack(alignment: .center) {
+          Rectangle()
+            .frame(width: 25, height: 4, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            .cornerRadius(10)
+            .opacity(0.25)
+            .padding(.vertical, 8)
+        }
+        .frame(width: geometry.size.width, height: 20, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        .onTapGesture {
+          handleAction()
+        }
+
+        // List of Cities
+        List {
+            ForEach(0..<self.markers.count) { id in
+              let marker = self.markers[id]
+              Button(action: {
+                buttonAction(marker)
+              }) {
+                Text(marker.title ?? "")
+              }
+            }
+        }.frame(maxWidth: .infinity)
+      }
+    }
+  }
+}
+
 struct MapContainerView: View {
 
   @Binding var zoomInCenter: Bool
@@ -108,6 +131,9 @@ struct MapContainerView: View {
       let diameter = zoomInCenter ? geometry.size.width : (geometry.size.height * 2)
       MapViewControllerBridge(markers: $markers, selectedMarker: $selectedMarker, onAnimationEnded: {
         self.zoomInCenter = true
+      }, mapViewWillMove: { (isGesture) in
+        guard isGesture else { return }
+        self.zoomInCenter = false
       })
       .clipShape(
         Circle()
@@ -123,6 +149,7 @@ struct MapContainerView: View {
           )
       )
       .animation(.easeIn)
+      .background(Color(red: 254.0/255.0, green: 1, blue: 220.0/255.0))
     }
   }
 }
