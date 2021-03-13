@@ -46,10 +46,7 @@ struct ContentView: View {
 
     GeometryReader { geometry in
       ZStack(alignment: .top) {
-        // Map
-        MapContainerView(zoomInCenter: $zoomInCenter, markers: $markers, selectedMarker: $selectedMarker)
-          .frame(width: geometry.size.width, height: geometry.size.height - scrollViewHeight + 40)
-          .blur(radius: 0)
+        // Map - TODO add the map here
 
         // Cities List
         CitiesList(markers: $markers) { (marker) in

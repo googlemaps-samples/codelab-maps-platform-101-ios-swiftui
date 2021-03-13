@@ -146,17 +146,17 @@
 		AA4DEA87253A5A52004469E1 /* GoogleMapsSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				AA4754A625CE299C0048065D /* MapViewControllerBridge.swift */,
 				AA5C416F25478475000B4DAB /* GoogleMaps.bundle */,
 				AA4DEA96253A5A52004469E1 /* Info.plist */,
 				AA4DEA88253A5A52004469E1 /* AppDelegate.swift */,
+				AA47547825CE0F9D0048065D /* City.swift */,
 				AA4DEA8C253A5A52004469E1 /* ContentView.swift */,
+				AA47547B25CE0FBE0048065D /* MapViewController.swift */,
+				AA4754A625CE299C0048065D /* MapViewControllerBridge.swift */,
 				AA4DEA8A253A5A52004469E1 /* SceneDelegate.swift */,
 				AA4DEA8E253A5A52004469E1 /* Assets.xcassets */,
 				AA4DEA93253A5A52004469E1 /* LaunchScreen.storyboard */,
 				AA4DEA90253A5A52004469E1 /* Preview Content */,
-				AA47547825CE0F9D0048065D /* City.swift */,
-				AA47547B25CE0FBE0048065D /* MapViewController.swift */,
 			);
 			path = GoogleMapsSwiftUI;
 			sourceTree = "<group>";

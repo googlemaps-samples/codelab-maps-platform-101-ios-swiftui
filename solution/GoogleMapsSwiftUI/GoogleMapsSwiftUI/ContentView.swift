@@ -49,8 +49,6 @@ struct ContentView: View {
         // Map
         MapContainerView(zoomInCenter: $zoomInCenter, markers: $markers, selectedMarker: $selectedMarker)
           .frame(width: geometry.size.width, height: geometry.size.height - scrollViewHeight + 40)
-          .blur(radius: 0)
-
         // Cities List
         CitiesList(markers: $markers) { (marker) in
           guard self.selectedMarker != marker else { return }
