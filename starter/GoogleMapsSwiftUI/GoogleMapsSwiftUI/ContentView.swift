@@ -27,8 +27,7 @@ struct ContentView: View {
     City(name: "Tokyo", coordinate: CLLocationCoordinate2D(latitude: 35.6684411, longitude: 139.6004407))
   ]
 
-  /// State for markers displayed on the map when the use taps at a location. This property gets
-  /// reset whenever a new polygon is added to the map.
+  /// State for markers displayed on the map for each city in `cities`
   @State var markers: [GMSMarker] = cities.map {
     let marker = GMSMarker(position: $0.coordinate)
     marker.title = $0.name
