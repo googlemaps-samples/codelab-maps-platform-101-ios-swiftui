@@ -27,8 +27,7 @@ struct ContentView: View {
     City(name: "Tokyo", coordinate: CLLocationCoordinate2D(latitude: 35.6684411, longitude: 139.6004407))
   ]
 
-  /// State for markers displayed on the map when the use taps at a location. This property gets
-  /// reset whenever a new polygon is added to the map.
+  /// State for markers displayed on the map for each city in `cities`
   @State var markers: [GMSMarker] = cities.map {
     let marker = GMSMarker(position: $0.coordinate)
     marker.title = $0.name
@@ -47,8 +46,29 @@ struct ContentView: View {
     GeometryReader { geometry in
       ZStack(alignment: .top) {
         // Map
-        MapContainerView(zoomInCenter: $zoomInCenter, markers: $markers, selectedMarker: $selectedMarker)
-          .frame(width: geometry.size.width, height: geometry.size.height - scrollViewHeight + 40)
+        let diameter = zoomInCenter ? geometry.size.width : (geometry.size.height * 2)
+        MapViewControllerBridge(markers: $markers, selectedMarker: $selectedMarker, onAnimationEnded: {
+          self.zoomInCenter = true
+        }, mapViewWillMove: { (isGesture) in
+          guard isGesture else { return }
+          self.zoomInCenter = false
+        })
+        .clipShape(
+          Circle()
+            .size(
+              width: diameter,
+              height: diameter
+            )
+            .offset(
+              CGPoint(
+                x: (geometry.size.width - diameter) / 2,
+                y: (geometry.size.height - diameter) / 2
+              )
+            )
+        )
+        .animation(.easeIn)
+        .background(Color(red: 254.0/255.0, green: 1, blue: 220.0/255.0))
+
         // Cities List
         CitiesList(markers: $markers) { (marker) in
           guard self.selectedMarker != marker else { return }
@@ -114,40 +134,6 @@ struct CitiesList: View {
             }
         }.frame(maxWidth: .infinity)
       }
-    }
-  }
-}
-
-struct MapContainerView: View {
-
-  @Binding var zoomInCenter: Bool
-  @Binding var markers: [GMSMarker]
-  @Binding var selectedMarker: GMSMarker?
-
-  var body: some View {
-    GeometryReader { geometry in
-      let diameter = zoomInCenter ? geometry.size.width : (geometry.size.height * 2)
-      MapViewControllerBridge(markers: $markers, selectedMarker: $selectedMarker, onAnimationEnded: {
-        self.zoomInCenter = true
-      }, mapViewWillMove: { (isGesture) in
-        guard isGesture else { return }
-        self.zoomInCenter = false
-      })
-      .clipShape(
-        Circle()
-          .size(
-            width: diameter,
-            height: diameter
-          )
-          .offset(
-            CGPoint(
-              x: (geometry.size.width - diameter) / 2,
-              y: (geometry.size.height - diameter) / 2
-            )
-          )
-      )
-      .animation(.easeIn)
-      .background(Color(red: 254.0/255.0, green: 1, blue: 220.0/255.0))
     }
   }
 }
