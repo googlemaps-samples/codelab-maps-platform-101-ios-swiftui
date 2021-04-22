@@ -11,4 +11,4 @@ Accompanying starter and solution code for the [Using Maps SDK for iOS with Swif
 * [Carthage][carthage]
 
 [carthage]: https://github.com/Carthage/Carthage
-[codelab]: TODO
+[codelab]: https://developers.google.com/codelabs/maps-platform/maps-platform-ios-swiftui
